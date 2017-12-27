@@ -1,0 +1,39 @@
+/**********************************************************************
+ * Project Report Template
+ * Project 3 (Map Routing), ECE368
+ **********************************************************************/
+
+Name: Geoff Cramer  
+Login: cramerg      
+
+/**********************************************************************
+ *  Explain your overall approach to the problem and a short
+ *  general summary of your solution and code.
+ **********************************************************************/
+I mainly looked at the pseudo-code on the lecture slides and implemented the details from there. I used an adjacency list to store the map and a linked lists to queue all the vertices. I allocated two integer arrays for the distance and predecessors. My extractMin function goes through each element in the vertex queue and checks its distance and keeps track of the vertex with the current shortest path element. After I have the minimum, I relax all the edges leaving that vertex.
+
+
+/**********************************************************************
+ *  Known bugs / limitations of your program / assumptions made.
+ **********************************************************************/
+My algorithm is slow. For the usa.txt map, each query takes consistently around 7 seconds.  This is likely due to the fact that I used arrays for the distance and predecessors and initialize each distance to INT_MAX (2147483647) and each predecessor to -1. If a certain vertex has a shortest distance of INT_MAX, I assume it hasn’t been assigned and it’s distance is actually INF.
+
+
+/**********************************************************************
+ *  List whatever help (if any) that you received.
+ **********************************************************************/
+I only used the lecture slides to help me get the basic structure before filling in the details.
+
+
+/**********************************************************************
+ *  Describe any serious problems you encountered.                    
+ **********************************************************************/
+
+
+
+
+/**********************************************************************
+ *  List any other comments/feedback here (e.g., whether you
+ *  enjoyed doing the exercise, it was too easy/tough, etc.).
+ **********************************************************************/
+The assignment was quite challenging but doable. I liked that the performance part is only 15% of the grade and wasn’t weighted too heavily. I tried different optimization techniques but couldn’t get them to work properly (i.e. a min heap for the distance array).
